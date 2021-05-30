@@ -4,13 +4,13 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print(BASE_DIR)
+# print(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-jljd28jz7q(vey5-=d9hygil!@#r$n(wahiavc6jv8ue(4f!s@'
+SECRET_KEY = 'YOURS'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'real_estate.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'build'],
+        'DIRS': ['PATH TO index.html FOLDER'],
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -137,9 +137,9 @@ MEDIA_ROOT  = BASE_DIR / 'media'
 
 
 REST_FRAMEWORK = {
-        # 'DEFAULT_PERMISSION_CLASSES':(
-        #     'rest_framework.permissions.IsAuthenticated',
-        # ),
+        'DEFAULT_PERMISSION_CLASSES':(
+            'rest_framework.permissions.IsAuthenticated',
+        ),
 
     'DEFAULT_AUTHENTICATION_CLASSES': (
          'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -167,8 +167,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 #PROJECT EMAIL CONFIG SETTING
-# EMAIL_USE_TLS = config('EMAIL_USE_TLS')
-# EMAIL_HOST = config('EMAIL_HOST')
-# EMAIL_PORT = config('EMAIL_PORT')
-# EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
